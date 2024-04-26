@@ -11,6 +11,12 @@ router
         validateRequest(jobValidators.createJobValidation),
         jobControllers.createJob,
     )
-    .get('/', jobControllers.getAllJobs);
+    .get('/', jobControllers.getAllJobs)
+    .delete('/:id', jobControllers.deleteJob)
+    .patch(
+        '/:id',
+        validateRequest(jobValidators.updateJobValidation),
+        jobControllers.updateJob,
+    );
 
 export const jobRoutes = router;

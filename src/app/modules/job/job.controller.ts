@@ -26,7 +26,35 @@ const getAllJobs = catchAsync(async (req, res) => {
     });
 });
 
+// Delete Job
+const deleteJob = catchAsync(async (req, res) => {
+    const { id } = req.params;
+
+    const result = await jobServices.deleteJob(id);
+
+    sendSuccessResponse(res, {
+        statusCode: StatusCodes.OK,
+        message: 'Job deleted successfully',
+        data: result,
+    });
+});
+
+// Update Job
+const updateJob = catchAsync(async (req, res) => {
+    const { id } = req.params;
+
+    const result = await jobServices.updateJob(id, req.body);
+
+    sendSuccessResponse(res, {
+        statusCode: StatusCodes.OK,
+        message: 'Job updated successfully',
+        data: result,
+    });
+});
+
 export const jobControllers = {
     createJob,
     getAllJobs,
+    deleteJob,
+    updateJob,
 };
