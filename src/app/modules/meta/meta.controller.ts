@@ -3,6 +3,7 @@ import catchAsync from '../../utils/catchAsync';
 import sendSuccessResponse from '../../utils/sendSuccessResponse';
 import { metaServices } from './meta.service';
 
+// Count all jobs status (How many jobs are pending, interview and declined)
 const countJobsStats = catchAsync(async (req, res) => {
     const result = await metaServices.countJobsStats();
 
@@ -13,6 +14,7 @@ const countJobsStats = catchAsync(async (req, res) => {
     });
 });
 
+// Count last 6 month job post
 const countLastSixMonthJobs = catchAsync(async (req, res) => {
     const result = await metaServices.countLastSixMonthJobs();
 

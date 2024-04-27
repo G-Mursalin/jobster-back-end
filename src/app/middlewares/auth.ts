@@ -10,13 +10,18 @@ const auth = () => {
     return catchAsync(
         async (req: Request, res: Response, next: NextFunction) => {
             // Get token from header
-            const token = req.headers.authorization;
+            let token;
+            if (
+                req.headers.authorization &&
+                req.headers.authorization.startsWith('Bearer')
+            ) {
+                token = req.headers.authorization.split(' ')[1];
+            }
 
-            // Check if the token send from client
             if (!token) {
                 throw new AppError(
                     StatusCodes.UNAUTHORIZED,
-                    'You are not authorize',
+                    'You are not authorized',
                 );
             }
 

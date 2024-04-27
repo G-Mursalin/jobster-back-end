@@ -6,9 +6,9 @@ This repository contains the backend codebase responsible for handling `server-s
 
 ## 🔥 Demo
 
-Here is the link to the live server. We hope you enjoy it.
+Here is the link to the live server. I hope you enjoy it.
 
-> [The Jobster server Link]()
+> [The Jobster server Link](https://jobster-back-end.vercel.app/)
 
 ## 🏗️ How to Set up `Jobster Backend` locally?
 
@@ -69,3 +69,47 @@ npm run build
 ```
 
 It builds the app for production in the `dist` folder. It contains all javascript files that were converted from typescript files.
+
+### 🎗️ Start the Production Mode
+
+Use the following command to start the app in the production mode:
+
+```
+npm run start
+```
+
+It runs the server in production mode. Open [http://localhost:PORT](http://localhost:PORT) to view it in your browser. Where PORT is the port number specified in your `.env` file.
+
+### ✨ Format and lint the code
+
+Use the following command to format and lint the code:
+
+-   To lint the code:
+
+```
+npm run lint
+```
+
+-   To automatically fix linting issues:
+
+```
+npm run lint:fix
+```
+
+-   To format code using Prettier:
+
+```
+npm run prettier
+```
+
+-   To automatically fix formatting issues:
+
+```
+npm run prettier:fix
+```
+
+## ♨️ How to use `Jobster Backend` server
+
+Here is the link to the postman documentation. I hope you found it useful.
+
+> [The Jobster postman documentation Link](https://documenter.getpostman.com/view/18311198/2sA3Bt3qHK)

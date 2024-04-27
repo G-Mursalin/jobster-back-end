@@ -1,6 +1,7 @@
 import { dateHelpers } from '../../helpers/dateHelpers/dateHelpers';
 import { Job } from '../job/job.model';
 
+// Count all jobs status (How many jobs are pending, interview and declined)
 const countJobsStats = async () => {
     const stats = await Job.aggregate([
         {
@@ -21,6 +22,7 @@ const countJobsStats = async () => {
     return statsObj;
 };
 
+// Count last 6 month job post
 const countLastSixMonthJobs = async () => {
     const stats = await Job.aggregate([
         {
