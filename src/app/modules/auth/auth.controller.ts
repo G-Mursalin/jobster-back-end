@@ -21,7 +21,7 @@ const logIn = catchAsync(async (req, res) => {
     sendSuccessResponse(res, {
         statusCode: StatusCodes.OK,
         message: 'Login successfully',
-        data: accessToken,
+        data: { accessToken },
     });
 });
 
