@@ -4,7 +4,7 @@ import notFound from './app/middlewares/notFound';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import globalRoute from './app/routes';
 import healthCheck from './app/middlewares/healthCheck';
-import cookieParser from 'cookie-parser';
+// import cookieParser from 'cookie-parser';
 
 const app: Application = express();
 
@@ -17,7 +17,7 @@ app.use(
         // credentials: true,
     }),
 );
-app.use(cookieParser());
+// app.use(cookieParser());
 
 // App route
 app.use('/api/v1', globalRoute);
