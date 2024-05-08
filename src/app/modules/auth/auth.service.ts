@@ -15,7 +15,6 @@ const signUp = async (payload: IUser) => {
     const jwtPayload = {
         id: newUser.id,
         email: newUser.email,
-        name: newUser.name,
     };
 
     const accessToken = jwtHelpers.createJWTToken(
@@ -50,7 +49,6 @@ const logIn = async (payload: ILoginUser) => {
     const jwtPayload = {
         id: user.id,
         email: user.email,
-        name: user.name,
     };
 
     const accessToken = jwtHelpers.createJWTToken(
