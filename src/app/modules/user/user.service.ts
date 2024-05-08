@@ -19,6 +19,20 @@ const updateUser = async (payload: Partial<IUser>, user: JwtPayload) => {
     return updatedUser;
 };
 
+// Get Me
+const getMe = async (user: JwtPayload) => {
+    const { id, email } = user;
+
+    // Update user data
+    const userData = await User.findOne({
+        _id: id,
+        email,
+    }).select({ name: 1, email: 1, location: 1 });
+
+    return userData;
+};
+
 export const userServices = {
     updateUser,
+    getMe,
 };

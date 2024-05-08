@@ -9,10 +9,4 @@ export const JobType: TJobType[] = [
     'internship',
 ];
 
-export const jobSearchableFields = [
-    'position',
-    'company',
-    'jobLocation',
-    'status',
-    'jobType',
-];
+export const jobSearchableFields = ['position'];

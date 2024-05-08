@@ -6,11 +6,13 @@ import auth from '../../middlewares/auth';
 
 const router = express.Router();
 
-router.patch(
-    '/',
-    auth(),
-    validateRequest(userValidators.updateUserValidation),
-    userControllers.updateUser,
-);
+router
+    .get('/get-me', auth(), userControllers.getMe)
+    .patch(
+        '/',
+        auth(),
+        validateRequest(userValidators.updateUserValidation),
+        userControllers.updateUser,
+    );
 
 export const userRoutes = router;

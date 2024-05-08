@@ -14,6 +14,18 @@ const updateUser = catchAsync(async (req, res) => {
     });
 });
 
+// Get Me
+const getMe = catchAsync(async (req, res) => {
+    const result = await userServices.getMe(req.user);
+
+    sendSuccessResponse(res, {
+        statusCode: StatusCodes.OK,
+        message: 'User data retrieved successfully',
+        data: result,
+    });
+});
+
 export const userControllers = {
     updateUser,
+    getMe,
 };
